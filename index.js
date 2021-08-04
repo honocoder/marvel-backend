@@ -15,7 +15,9 @@ app.use(cors());
 
 // Routes import
 const comicsRoutes = require("./Routes/comics");
+const charactersRoutes = require("./Routes/Characters");
 app.use(comicsRoutes);
+app.use(charactersRoutes);
 
 // Undefined routes management
 app.all("*", (req, res) => {
