@@ -17,10 +17,10 @@ router.get("/comics", async (req, res) => {
 
 // TODO
 // Route 2 : get a list of comics containing a specific character
-router.get("comics/:characterId", async (req, res) => {
+router.get("/comics/:characterId", async (req, res) => {
   try {
     const response = await axios.get(
-      `${process.env.API_URL}/comics/${req.params.id}?apiKey=${process.env.API_KEY}`
+      `${process.env.API_URL}/comics/${req.params.characterId}?apiKey=${process.env.API_KEY}`
     );
     res.status(200).json(response.data);
   } catch (error) {
