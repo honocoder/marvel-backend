@@ -19,6 +19,10 @@ const charactersRoutes = require("./Routes/Characters");
 app.use(comicsRoutes);
 app.use(charactersRoutes);
 
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome on Marvel API!" });
+});
+
 // Undefined routes management
 app.all("*", (req, res) => {
   res.status(404).json({ message: "Page not found" });
