@@ -20,7 +20,7 @@ router.get("/comics", async (req, res) => {
 router.get("comics/:characterId", async (req, res) => {
   try {
     const response = await axios.get(
-      `${process.env.API_URL}/comics/${req.query.id}?apiKey=${process.env.API_KEY}`
+      `${process.env.API_URL}/comics/${req.params.id}?apiKey=${process.env.API_KEY}`
     );
     res.status(200).json(response.data);
   } catch (error) {
