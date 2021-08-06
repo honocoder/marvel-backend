@@ -7,7 +7,7 @@ const axios = require("axios");
 router.get("/comics", async (req, res) => {
   try {
     const response = await axios.get(
-      `${process.env.API_URL}/comics?apiKey=${process.env.API_KEY}&skip=${req.query.skip}&limit=${req.query.limit}&title=${req.query.title}`
+      `${process.env.API_URL}/comics?apiKey=${process.env.API_KEY}&skip=${req.query.skip}&limit=${req.query.limit}`
     );
     res.status(200).json(response.data);
   } catch (error) {
