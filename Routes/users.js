@@ -38,6 +38,17 @@ router.post("/user/signup", async (req, res) => {
         hash: hash,
         salt: salt,
       });
+
+      // Saving the user to the db
+      await newUser.save();
+
+      res.status(200).json({
+        _id: newUser._id,
+        token: token,
+        account: {
+          username: req.fields.username,
+        },
+      });
     } else {
       res.status(409).json({ message: "This email already exists." });
     }

@@ -12,10 +12,16 @@ app.use(cors());
 
 // TODO
 // Connexion to the database
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 // Routes import
 const comicsRoutes = require("./Routes/comics");
 const charactersRoutes = require("./Routes/Characters");
+const usersRoutes = require("./Routes/users");
 app.use(comicsRoutes);
 app.use(charactersRoutes);
 
