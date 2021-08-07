@@ -24,7 +24,7 @@ const charactersRoutes = require("./Routes/Characters");
 const usersRoutes = require("./Routes/users");
 app.use(comicsRoutes);
 app.use(charactersRoutes);
-app.use(userRoutes);
+app.use(usersRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome on Marvel API!" });
