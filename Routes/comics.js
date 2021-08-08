@@ -7,7 +7,7 @@ const axios = require("axios");
 router.get("/comics", async (req, res) => {
   try {
     const response = await axios.get(
-      `${process.env.API_URL}/comics?apiKey=${process.env.API_KEY}&skip=${req.query.skip}&limit=${req.query.limit}&title=${req.query.title}`
+      `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${process.env.API_KEY}&skip=${req.query.skip}&limit=${req.query.limit}&title=${req.query.title}`
     );
     res.status(200).json(response.data);
   } catch (error) {
@@ -15,12 +15,11 @@ router.get("/comics", async (req, res) => {
   }
 });
 
-// TODO
 // Route 2 : get a list of comics containing a specific character
 router.get("/comics/:id", async (req, res) => {
   try {
     const response = await axios.get(
-      `${process.env.API_URL}/comics/${req.params.id}?apiKey=${process.env.API_KEY}`
+      `https://lereacteur-marvel-api.herokuapp.com/comics/${req.params.id}?apiKey=${process.env.API_KEY}`
     );
     res.status(200).json(response.data);
   } catch (error) {
