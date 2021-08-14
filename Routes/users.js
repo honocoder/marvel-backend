@@ -68,7 +68,7 @@ router.post("/user/login", async (req, res) => {
       res.status(200).json({
         _id: user.id,
         token: user.token,
-        accout: user.account,
+        account: user.account,
       });
     } else {
       res.status(200).json({ message: "Wrong email or password" });

@@ -12,11 +12,14 @@ app.use(cors());
 
 // TODO
 // Connexion to the database
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
+const mongooseConnect = async () => {
+  await mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  });
+};
+mongooseConnect();
 
 // Routes import
 const comicsRoutes = require("./Routes/comics");
